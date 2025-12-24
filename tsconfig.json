@@ -1,0 +1,39 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src", // The root directory of the source code.
+    "outDir": "./dist", // The output directory for the compiled code.
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext", // The module code generation mode.
+    "target": "esnext", // The target ECMAScript version.
+    "types": ["@cloudflare/workers-types"], // The types to include in the compiled code.
+
+    // Other Outputs
+    "declaration": true, // Generates .d.ts declaration files for the compiled code.
+
+    // ==============================================================================
+    // Everything below here is optional, but recommended.
+    // ==============================================================================
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true, // Enforces strict checking of indexed access expressions.
+
+    // Style Options
+    "noUnusedLocals": true, // Enforces that all local variables are used.
+    "noUnusedParameters": true, // Enforces that all parameters are used.
+    "noPropertyAccessFromIndexSignature": true, // Prevents you accessing undefined properties on objects.
+
+    // Recommended Options
+    "strict": true, // Enforces strict type checking.
+    "verbatimModuleSyntax": true, // Forces you to use define imports as type if that's all you're importing.
+    "isolatedModules": true, // Enforces strong module boundaries.
+    "noUncheckedSideEffectImports": true, // Prevents you from importing a non-existent module, basically to catch typos.
+    "skipLibCheck": true, // Skips checking of external library types, the idea here is to save compilation time.
+    "forceConsistentCasingInFileNames": true // Enforces consistent casing in file names, helps with compatibility.
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test"]
+}

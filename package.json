@@ -1,0 +1,36 @@
+{
+  "name": "my-package-name",
+  "version": "0.1.0",
+  "description": "My package description.",
+  "author": "Connor Skelland",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "something",
+    "something else"
+  ],
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "clean": "tsc --build --clean",
+    "build": "tsc --build",
+    "build:watch": "tsc --watch",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250816.0",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.1.0"
+  },
+  "files": []
+}
