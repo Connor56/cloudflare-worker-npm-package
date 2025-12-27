@@ -1,7 +1,7 @@
 {
   "name": "@connor56/cloudflare-worker-npm-package",
   "version": "0.1.0",
-  "description": "My package description.",
+  "description": "A simple template for creating NPM packages optimized for Cloudflare Workers.",
   "author": "Connor Skelland",
   "license": "MIT",
   "engines": {
@@ -9,8 +9,10 @@
   },
   "homepage": "https://github.com/connor56/cloudflare-worker-npm-package#readme",
   "keywords": [
-    "something",
-    "something else"
+    "cloudflare",
+    "workers",
+    "template",
+    "typescript"
   ],
   "type": "module",
   "types": "dist/index.d.ts",
