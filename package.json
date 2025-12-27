@@ -1,5 +1,5 @@
 {
-  "name": "my-package-name",
+  "name": "@connor56/cloudflare-worker-npm-package",
   "version": "0.1.0",
   "description": "My package description.",
   "author": "Connor Skelland",
