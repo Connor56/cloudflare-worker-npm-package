@@ -1,6 +1,17 @@
 # Cloudflare Workers Package Template
 
-This is a template for creating a Cloudflare Workers package. It is a starting point for creating a package that can be published to NPM.
+A minimal, intentionally simple template for creating NPM packages optimized for Cloudflare Workers. This template gives you exactly what you need to publish a TypeScript package.
+
+## What's This For?
+
+This template is designed for developers who want to:
+
+- **Publish reusable code** to NPM that works seamlessly in Cloudflare Workers
+- **Start from a clean slate** without wrestling with unnecessary tooling and configuration
+- **Understand every file** in their project root (because you added them yourself)
+- **Ship quickly** with modern TypeScript, strict type checking, and fast testing built in
+
+Unlike bloated boilerplates that make hundreds of decisions for you, this template provides a solid foundation and gets out of your way. If your project gets overrun with tooling, at least you'll own the decisions!
 
 ## Features
 
@@ -10,6 +21,132 @@ This is a template for creating a Cloudflare Workers package. It is a starting p
 - Uses Vitest for testing.
 - Compiles to ESM only.
 - Generates .d.ts files for the package.
+
+## Quick Start
+
+Ready to create your package? Here's how to get started:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/cloudflare-worker-npm-package.git my-package-name
+cd my-package-name
+```
+
+### 2. Remove Existing Git History
+
+Start fresh with your own git history:
+
+```bash
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit from template"
+```
+
+### 3. Update Package Information
+
+Edit `package.json` and update:
+
+- `name` - Your package name (must be unique on NPM)
+- `description` - What your package does
+- `author` - Your name
+- `keywords` - Search terms for NPM discovery
+- `repository` - Your repository URL (once you create it)
+
+### 4. Install Dependencies
+
+```bash
+npm install
+```
+
+### 5. Start Building
+
+- Write your code in `src/index.ts`
+- Add tests in `test/index.test.ts`
+- Run tests: `npm test`
+- Build: `npm run build`
+- Watch mode: `npm run build:watch`
+
+### 6. Publish to NPM
+
+When you're ready to publish:
+
+```bash
+npm login
+npm publish
+```
+
+The `prepublishOnly` script will automatically run tests, clean, and build before publishing, ensuring you never ship broken or stale code.
+
+## Why the Simple Structure?
+
+My biggest pet peeve in a project is root directory detritus. Even something as messy as this makes my skin crawl:
+
+```
+📁 ./
+├── 📁 .cursor/
+├── 📁 static/
+├── 📁 scripts/
+├── 📁 src/
+├── 📄 .DS_Store
+├── 📄 .env
+├── 📄 .env.example
+├── 📄 .gitignore
+├── 📄 .grabit
+├── 📄 .npmrc
+├── 📄 .prettierignore
+├── 📄 .prettierrc
+├── 📄 README.md
+├── 📄 eslint.config.js
+├── 📄 mise.toml
+├── 📄 package-lock.json
+├── 📄 package.json
+├── 📄 svelte.config.js
+├── 📄 tsconfig.json
+├── 📄 vite.config.ts
+├── 📄 vitest-setup-client.ts
+└── 📄 wrangler.jsonc
+```
+
+Sometimes you need every bit of it. But it's still an ugly cognitive overload.
+
+Starting from a simple template means **you own any extra files that end up in your root**. With ownership comes understanding and the absolute permission to tidy and optimize without fear.
+
+**In short, I've kept it simple to keep you nimble.**
+
+## Package Extensions
+
+If you'd prefer decisions to be made for you, here are some things you may want to add:
+
+### Code Quality & Formatting
+
+- **A formatter** - [Prettier](https://prettier.io/) for consistent code formatting
+- **A linter** - [ESLint](https://eslint.org/) for code quality rules (or [Biome](https://biomejs.dev/) for an all-in-one tool)
+- **Pre-commit hooks** - [Husky](https://typicode.github.io/husky/) + [lint-staged](https://github.com/lint-staged/lint-staged) to enforce quality before commits
+
+### Documentation
+
+- **`/docs` folder** - For extra examples, API documentation, or guides
+- **Documentation generator** - [TypeDoc](https://typedoc.org/) for auto-generating API docs from your TypeScript code
+
+### Automation
+
+- **`/scripts` folder** - For custom repository actions and automation
+- **CI/CD pipeline** - [GitHub Actions](https://docs.github.com/en/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/), or [CircleCI](https://circleci.com/) for automated testing and deployment
+- **Automated versioning** - [semantic-release](https://github.com/semantic-release/semantic-release) or [changesets](https://github.com/changesets/changesets) for automatic version bumps and changelog generation
+- **Automated dependency updates** - [Renovate](https://github.com/renovatebot/renovate) or [Dependabot](https://github.com/dependabot) to keep your dependencies up to date
+
+### Testing
+
+- **Code coverage** - Add coverage reporting with [Vitest's built-in coverage](https://vitest.dev/guide/coverage.html)
+- **Visual regression testing** - If your package has UI components
+
+The beauty of starting simple is that you can add exactly what you need, when you need it—and you'll understand why every file exists.
+
+## License
+
+MIT
 
 ## Understanding package.json
 
